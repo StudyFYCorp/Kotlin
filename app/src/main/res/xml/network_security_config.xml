@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Permite tráfego claro para 127.0.0.1 e 10.0.2.2 (emulador Android) -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain> <!-- emulador Android -->
+        <domain includeSubdomains="true">10.107.134.17</domain> <!-- Se necessário para o servidor remoto -->
+    </domain-config>
+</network-security-config>
