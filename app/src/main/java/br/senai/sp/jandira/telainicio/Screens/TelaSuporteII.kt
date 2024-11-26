@@ -31,12 +31,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SuporteProblema(modifier: Modifier = Modifier) {
+fun SuporteProblema(controledeNavegacao: NavHostController) {
 
     var text by remember { mutableStateOf("") }
 
@@ -113,5 +115,5 @@ fun SuporteProblema(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun SuporteProblemaPreview() {
-    SuporteProblema()
+    SuporteProblema(rememberNavController())
 }

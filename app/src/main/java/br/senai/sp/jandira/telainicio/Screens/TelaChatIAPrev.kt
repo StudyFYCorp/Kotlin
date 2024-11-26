@@ -30,13 +30,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
 
-fun TelaChatIA(modifier: Modifier = Modifier) {
+fun TelaChatIA(controledeNavegacao: NavHostController) {
 
     Column(
         modifier = Modifier
@@ -181,5 +183,5 @@ fun TelaChatIA(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaChatIAPreview() {
- TelaChatIA()
+ TelaChatIA(rememberNavController())
 }

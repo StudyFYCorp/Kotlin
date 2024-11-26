@@ -40,11 +40,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun acompanhamentoProfessor(modifier: Modifier = Modifier) {
+fun acompanhamentoProfessor(controledeNavegacao: NavHostController) {
     Column {
         Column(
             modifier = Modifier.fillMaxWidth(),
@@ -610,5 +612,5 @@ fun acompanhamentoProfessor(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun acompanhamentoProfessorPreview() {
-    acompanhamentoProfessor()
+    acompanhamentoProfessor(rememberNavController())
 }

@@ -36,11 +36,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatConversa(modifier: Modifier = Modifier) {
+fun ChatConversa(controledeNavegacao: NavHostController) {
 
     var textoMensagem by remember { mutableStateOf("") }
 
@@ -318,5 +320,5 @@ fun ChatConversa(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi =  true)
 @Composable
 private fun ChatConversaPreview() {
-    ChatConversa()
+    ChatConversa(rememberNavController())
 }

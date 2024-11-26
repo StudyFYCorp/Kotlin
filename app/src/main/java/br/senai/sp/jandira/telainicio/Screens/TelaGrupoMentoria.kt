@@ -51,6 +51,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 
@@ -60,7 +61,7 @@ fun DropdownMenuItem(onClick: () -> Unit, interactionSource: @Composable () -> U
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TelaGrupoMentoria(controleDeNavegacao: NavHostController? = null) {
+fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 
     var atividades = remember { mutableStateOf(false) }
     var membros = remember { mutableStateOf(false) }
@@ -1540,5 +1541,5 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController? = null) {
         @Preview(showBackground = true, showSystemUi = false)
 @Composable
 fun TelaGrupoMentoriaPreview() {
-    TelaGrupoMentoria()
+    TelaGrupoMentoria(rememberNavController())
 }

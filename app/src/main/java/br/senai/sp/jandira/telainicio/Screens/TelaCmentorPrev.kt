@@ -25,10 +25,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun chatMentorPrev(modifier: Modifier = Modifier) {
+fun chatMentorPrev(controledeNavegacao: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -106,5 +108,5 @@ fun chatMentorPrev(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun chatMentorPreview() {
-    chatMentorPrev()
+    chatMentorPrev(rememberNavController())
 }

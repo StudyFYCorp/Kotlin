@@ -30,13 +30,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 import org.w3c.dom.Text
 import java.time.format.TextStyle
 
 @Composable
-fun TelaEsqueciASenha() {
+fun TelaEsqueciASenha(controledeNavegacao: NavHostController) {
     Surface(
         color = Color(0xFFFFEE101)
     ) {
@@ -165,5 +167,5 @@ fun TelaEsqueciASenha() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaEsqueciASenhaPreview() {
-        TelaEsqueciASenha()
+        TelaEsqueciASenha(rememberNavController())
 }

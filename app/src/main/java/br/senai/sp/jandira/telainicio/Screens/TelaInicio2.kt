@@ -25,12 +25,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TelaInicio2(controleDeNavegacao: NavHostController? = null) {
+fun TelaInicio2(controleDeNavegacao: NavHostController) {
 
     Column(
         modifier = Modifier
@@ -162,6 +163,6 @@ fun TelaInicio2(controleDeNavegacao: NavHostController? = null) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaInicio2Preview() {
-    TelaInicio2()
+    TelaInicio2(rememberNavController())
 
 }

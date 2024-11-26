@@ -30,11 +30,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @Composable
-fun RankDesceu(modifier: Modifier = Modifier) {
+fun RankDesceu(controledeNavegacao: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize(),
@@ -154,5 +156,5 @@ fun RankDesceu(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun RankDesceuPreview() {
-    RankDesceu()
+    RankDesceu(rememberNavController())
 }

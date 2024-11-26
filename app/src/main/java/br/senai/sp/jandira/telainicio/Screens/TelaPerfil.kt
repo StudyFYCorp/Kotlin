@@ -14,6 +14,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.Screens.TelaPerfilRemnants.DesempenhodoAluno
 import br.senai.sp.jandira.telainicio.Screens.TelaPerfilRemnants.EmblemasAlunos
 import br.senai.sp.jandira.telainicio.Screens.TelaPerfilRemnants.InformacoesdoAluno
@@ -23,7 +25,7 @@ import br.senai.sp.jandira.telainicio.Screens.TelaPerfilRemnants.RankdeAlunos
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @Composable
-fun TelaPerfil() {
+fun TelaPerfil(controledeNavegacao: NavHostController) {
 
     val scrollState = rememberScrollState()
 
@@ -99,5 +101,5 @@ fun TelaPerfil() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaPerfilPreview() {
-        TelaPerfil()
+        TelaPerfil(rememberNavController())
 }

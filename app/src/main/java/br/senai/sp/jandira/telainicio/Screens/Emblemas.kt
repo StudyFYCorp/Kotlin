@@ -17,11 +17,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @Composable
-fun Emblemas() {
+fun Emblemas(controledeNavegacao: NavHostController) {
     Column(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
@@ -379,5 +381,5 @@ fun Emblemas() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun EmblemasPreview() {
-    Emblemas()
+    Emblemas(rememberNavController())
 }

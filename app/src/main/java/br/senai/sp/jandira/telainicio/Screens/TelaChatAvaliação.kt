@@ -44,11 +44,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatAvaliacao(modifier: Modifier = Modifier) {
+fun ChatAvaliacao(controledeNavegacao: NavHostController) {
 
     var textoMensagem by remember { mutableStateOf("") }
 
@@ -381,5 +383,5 @@ fun ChatAvaliacao(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi =  true)
 @Composable
 private fun ChatAvaliacaoPreview() {
-    ChatAvaliacao()
+    ChatAvaliacao(rememberNavController())
 }

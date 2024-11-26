@@ -43,12 +43,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 import org.w3c.dom.Text
 import kotlin.math.roundToInt
 
 @Composable
-fun TelaTeste(modifier: Modifier = Modifier) {
+fun TelaTeste(controledeNavegacao: NavHostController) {
     var isScreenVisible by remember { mutableStateOf(false) }
 
     // Variável que rastreia o deslocamento vertical para o arraste
@@ -218,5 +220,5 @@ Column {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaTestePreview() {
-    TelaTeste()
+    TelaTeste(rememberNavController())
 }

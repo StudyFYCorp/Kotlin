@@ -40,11 +40,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TelaLogin(controleDeNavegacao: NavHostController?= null) {
+fun TelaLogin(controleDeNavegacao: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -247,5 +248,5 @@ fun TelaLogin(controleDeNavegacao: NavHostController?= null) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaLoginPreview() {
-    TelaLogin()
+    TelaLogin(rememberNavController())
 }

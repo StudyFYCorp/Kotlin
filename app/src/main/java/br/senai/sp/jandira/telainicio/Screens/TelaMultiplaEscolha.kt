@@ -12,10 +12,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @Composable
-fun TelaMultiplaEscolha() {
+fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -117,5 +119,5 @@ fun TelaMultiplaEscolha() {
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun PreviewTelaMultiplaEscolha() {
-    TelaMultiplaEscolha()
+    TelaMultiplaEscolha(rememberNavController())
 }

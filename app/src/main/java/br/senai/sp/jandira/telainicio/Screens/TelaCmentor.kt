@@ -29,12 +29,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun telaChatCMentor(modifier: Modifier = Modifier) {
+fun telaChatCMentor(controledeNavegacao: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -187,5 +189,5 @@ fun telaChatCMentor(modifier: Modifier = Modifier) {
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 private fun telaChatCmentorPreview() {
-    telaChatCMentor()
+    telaChatCMentor(rememberNavController())
 }

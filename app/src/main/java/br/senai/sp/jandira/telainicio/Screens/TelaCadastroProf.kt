@@ -40,11 +40,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TelaCadastroProf(controleDeNavegacao: NavHostController?= null) {
+fun TelaCadastroProf(controleDeNavegacao: NavHostController) {
 
     var especializacao by remember { mutableStateOf("") }
 
@@ -174,5 +175,5 @@ fun TelaCadastroProf(controleDeNavegacao: NavHostController?= null) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaCadastroProfPreview() {
-    TelaCadastroProf()
+    TelaCadastroProf(rememberNavController())
 }

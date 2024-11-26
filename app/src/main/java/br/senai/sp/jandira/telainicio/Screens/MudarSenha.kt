@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
@@ -28,7 +29,7 @@ import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MudarSenha(controleDeNavegacao: NavHostController? = null){
+fun MudarSenha(controleDeNavegacao: NavHostController){
 
     var SenhaAtual = remember { mutableStateOf("") }
     var NovaSenha = remember { mutableStateOf("") }
@@ -210,5 +211,5 @@ fun MudarSenha(controleDeNavegacao: NavHostController? = null){
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun MudarSenhaPreview() {
-    MudarSenha()
+    MudarSenha(rememberNavController())
 }

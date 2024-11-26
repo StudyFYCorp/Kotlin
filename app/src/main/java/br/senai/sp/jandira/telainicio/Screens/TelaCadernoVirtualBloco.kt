@@ -27,11 +27,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @Composable
-fun BlocoCadernoVirtual(modifier: Modifier = Modifier) {
+fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -113,5 +115,5 @@ fun BlocoCadernoVirtual(modifier: Modifier = Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun BlocoCadernoVirtualPreview() {
-    BlocoCadernoVirtual()
+    BlocoCadernoVirtual(rememberNavController())
 }
