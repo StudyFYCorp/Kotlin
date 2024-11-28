@@ -42,7 +42,6 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -54,6 +53,10 @@ import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
+import br.senai.sp.jandira.telainicio.Screens.TelaGrupoMentoriaRemnants.ColumnCard
+import br.senai.sp.jandira.telainicio.Screens.TelaGrupoMentoriaRemnants.HeaderGrupoMentoria
+import br.senai.sp.jandira.telainicio.Screens.TelaGrupoMentoriaRemnants.mentorGrupo
+import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 
 fun DropdownMenuItem(onClick: () -> Unit, interactionSource: @Composable () -> Unit) {
@@ -85,148 +88,18 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                 .padding(horizontal = 20.dp)
                 .background(Color.White)
         ) {
-            // Título
-            Box(
-                modifier = Modifier
-                    .padding(top = 15.dp)
-                    .height(50.dp)
-                    .width(200.dp)
-                    .align(Alignment.CenterHorizontally)
-            ) {
-                Text(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp,
-                    color = Color(0xFF302F2F),
-                    text = "Grupo de mentoria",
-                    modifier = Modifier
-                        .align(Alignment.BottomCenter)
-                        .padding(bottom = 20.dp)
-                )
-            }
 
-            Spacer(modifier = Modifier.height(50.dp))
-            // Row com o card quadrado e descrição
-            Row(
-                modifier = Modifier
-                    .height(150.dp)
-                    .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                Column(
-                    verticalArrangement = Arrangement.SpaceEvenly,
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier
-                        .drawBehind {
-                            // Configurações da sombra
-                            val shadowColor = Color(0xFFE9CE03) // Cor da sombra sólida
-                            val offsetY = 15f // Deslocamento no eixo Y
-                            val cornerRadius = 20f // Raio dos cantos arredondados
+            // QUEBRAR AQUI
 
-                            // Desenha a sombra sólida com cantos arredondados
-                            drawRoundRect(
-                                color = shadowColor.copy(alpha = 0.8f), // Define a cor e transparência da sombra
-                                topLeft = Offset(0f, offsetY), // Define o deslocamento da sombra
-                                size = Size(
-                                    size.width,
-                                    size.height
-                                ), // Tamanho da sombra igual ao da Column
-                                cornerRadius = CornerRadius(
-                                    cornerRadius,
-                                    cornerRadius
-                                ) // Define os cantos arredondados
-                            )
-                        }
-                        .border(
-                            width = 1.dp, // Largura da borda
-                            color = Color(0xFFE9CE03), // Cor da borda
-                            shape = RoundedCornerShape(10.dp) // O mesmo shape para a borda
-                        )
-                        .fillMaxHeight()
-                        .width(130.dp)
-                        .background(Color(0xFFFEE101), shape = RoundedCornerShape(10.dp))
-                ) {
-                    Image(
-                        modifier = Modifier
-                            .size(80.dp),
-                        painter = painterResource(id = R.drawable.usuario),
-                        contentDescription = "Mascote"
-                    )
-                    Text(
-                        text = "membros 18/30",
-                        color = Color.Black,
-                        fontWeight = FontWeight.Bold
-                    ) // Mudando a cor do texto para branco
-                }
-                Column(
-                    modifier = Modifier
-                        .fillMaxHeight(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(
-                        text = "Descrição",
-                        fontWeight = FontWeight.Bold
-                    )
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .drawBehind {
-                                // Configurações da sombra
-                                val shadowColor = Color(0xFFD9D9D9) // Cor da sombra sólida
-                                val offsetY = 15f // Deslocamento no eixo Y
-                                val cornerRadius = 20f // Raio dos cantos arredondados
+        HeaderGrupoMentoria()
 
-                                // Desenha a sombra sólida com cantos arredondados
-                                drawRoundRect(
-                                    color = shadowColor.copy(alpha = 0.8f), // Define a cor e transparência da sombra
-                                    topLeft = Offset(
-                                        0f,
-                                        offsetY
-                                    ), // Define o deslocamento da sombra
-                                    size = Size(
-                                        size.width,
-                                        size.height
-                                    ), // Tamanho da sombra igual ao da Column
-                                    cornerRadius = CornerRadius(
-                                        cornerRadius,
-                                        cornerRadius
-                                    ) // Define os cantos arredondados
-                                )
-                            }
-                            .height(120.dp)
-                            .background(Color.White, shape = RoundedCornerShape(10.dp))
-                            .border(
-                                1.dp,
-                                color = Color(0xFFD9D9D9),
-                                shape = RoundedCornerShape(5.dp)
-                            )
+            //ACABA AQUI
 
-                    ) {
-                        Text(
-                            "wsdsd sds dewfefnj fnierf uhfhef efeufhuefe \nfheufh  sjds hsdhsjd \njhjfsjf sfhsjhfj h jshf jsh djs\n jh sh jhshd jshdjsh d ",
-                            fontSize = 16.sp,
-                            modifier = Modifier.padding(start = 10.dp, top = 10.dp)
-                        )
-                    }
 
-                }
-            }
+            //MENTOR COMEÇO
+    mentorGrupo()
 
-            Row(
-                modifier = Modifier
-                    .align(alignment = Alignment.Start)
-                    .padding(top = 30.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.iconementoria),
-                    contentDescription = "Mentor Image",
-                    modifier = Modifier.size(24.dp)
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text("Mentor do grupo", fontWeight = FontWeight.Bold, fontSize = 15.sp)
-
-            }
+            //MENTOR FIM
             Spacer(modifier = Modifier.height(10.dp))
 
             Column(
@@ -237,123 +110,10 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 
 
             }
-            Column(
-                modifier = Modifier
-                    .drawBehind {
-                        // Configurações da sombra
-                        val shadowColor = Color(0xFFD9D9D9) // Cor da sombra sólida
-                        val offsetX = 5f // Deslocamento horizontal da sombra
-                        val offsetY = 10f // Deslocamento vertical da sombra
-                        val cornerRadius = 30f // Raio dos cantos arredondados
+            //COLUMN CARD
+    ColumnCard()
 
-                        // Desenha a sombra sólida com cantos arredondados
-                        drawRoundRect(
-                            color = shadowColor.copy(alpha = 0.8f), // Define a cor e transparência da sombra
-                            topLeft = Offset(
-                                -offsetX,
-                                offsetY
-                            ), // Define o deslocamento da sombra (lateral e para baixo)
-                            size = Size(
-                                size.width + offsetX * 2, // Aumenta a largura da sombra
-                                size.height + offsetY // Aumenta a altura da sombra
-                            ), // Tamanho da sombra ajustado
-                            cornerRadius = CornerRadius(
-                                cornerRadius,
-                                cornerRadius
-                            ) // Define os cantos arredondados
-                        )
-                    }
-                    .height(60.dp) // Mantém a altura desejada
-                    .width(400.dp) // Mantém a largura desejada
-                    .background(
-                        Color.White,
-                        shape = RoundedCornerShape(10.dp)
-                    ) // Aplica o fundo com bordas arredondadas
-                    .border(
-                        1.dp,
-                        color = Color(0xFFD9D9D9),
-                        shape = RoundedCornerShape(10.dp) // Certifique-se de que a borda também tenha os mesmos cantos arredondados
-                    )
-            ) {
-
-                Row {
-
-                    Box(modifier = Modifier.size(60.dp)) {
-                        Image(
-                            painter = painterResource(id = R.drawable.usuario),
-                            contentDescription = "usuario",
-                            modifier = Modifier
-                                .size(60.dp)
-                                .padding(start = 15.dp)
-                                .width(20.dp)
-                        )
-                    }
-                    Spacer(modifier = Modifier.width(10.dp))
-                    Box() {
-                        Text(
-                            text = "Nome do mentor",
-                            modifier = Modifier
-                                .padding(start = 10.dp, top = 10.dp),
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(
-                            text = ("20 pessoas"),
-                            modifier = Modifier
-                                .padding(top = 24.dp, start = 10.dp),
-                            fontSize = 14.sp
-                        )
-
-                    }
-
-                    Box(
-
-
-                        modifier = Modifier
-                            .size(160.dp)
-                            .padding(start = 20.dp)
-                    ) {
-
-
-                        Image(
-                            painter = painterResource(id = R.drawable.linha),
-                            contentDescription = "linha",
-                            modifier = Modifier
-                                .height(60.dp)
-                                .width(80.dp)
-                                .padding(start = 2.dp, top = 10.dp, bottom = 10.dp),
-                        )
-                        Text(
-                            "4.5",
-                            modifier = Modifier
-                                .padding(top = 20.dp)
-                                .align(Alignment.TopStart),
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(
-                            "(254 avaliações)",
-                            modifier = Modifier
-                                .padding(top = 30.dp, start = 50.dp)
-                                .align(Alignment.TopStart),
-                            fontSize = 10.sp
-                        )
-                        Image(
-                            painter = painterResource(id = R.drawable.estrelas),
-                            contentDescription = "teste",
-                            modifier = Modifier
-                                .size(90.dp) // Ajuste o tamanho conforme necessário
-                                .align(Alignment.Center)
-                                .padding(
-                                    bottom = 20.dp,
-                                    start = 30.dp
-                                ) // Tente alinhar ao centro para ver se é exibido corretamente
-                        )
-                    }
-
-
-                }
-            }
+            //FIM COLUMN CARD
             Spacer(modifier = Modifier.height(30.dp))
 
             Row(
@@ -415,8 +175,14 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 
 
                 ) {
-                    Text(text = "MEMBROS", fontWeight = FontWeight.ExtraBold)
+                    Text(
+                        text = "MEMBROS",
+                        fontWeight = FontWeight.ExtraBold,
+                        fontFamily = poppinsFontFamily,
+                        fontSize = 12.sp
+                    )
                 }
+
 
                 Box(
                     modifier = Modifier
@@ -472,7 +238,12 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = "ATIVIDADES", fontWeight = FontWeight.ExtraBold)
+                    Text(
+                        text = "ATIVIDADES",
+                        fontWeight = FontWeight.ExtraBold,
+                        fontFamily = poppinsFontFamily,
+                        fontSize = 12.sp
+                    )
                 }
 
                 Box(
@@ -531,12 +302,18 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 
 
                 ) {
-                    Text(text = "DUVIDA", fontWeight = FontWeight.ExtraBold)
+                    Text(
+                        text = "DUVIDA",
+                        fontWeight = FontWeight.ExtraBold,
+                        fontFamily = poppinsFontFamily,
+                        fontSize = 12.sp
+                    )
                 }
             }
 
             Spacer(modifier = Modifier.height(20.dp))
 
+            //atividade//
             Column(
                 modifier = Modifier
                     .background(Color.White)
@@ -674,7 +451,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 //
                             ) {
                                 Text(
-                                    text = "atividade complementar de equações fwdwfe...",
+                                    text = "Atividade complementar de multiplos.",
                                     textAlign = TextAlign.Center,
                                     fontSize = 12.sp
                                 )
@@ -708,7 +485,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                                                 .size(20.dp) // Define o tamanho da imagem, ajuste conforme necessário
                                         )
                                         Text(
-                                            modifier = Modifier.width(60.dp),
+                                            modifier = Modifier.width(50.dp),
                                             text = "12 membros já fizeram",
                                             textAlign = TextAlign.Center,
                                             fontSize = 8.sp
@@ -716,7 +493,9 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                                     }
                                 }
                             }
+
                             Spacer(modifier = Modifier.width(30.dp))
+
                             Column(
                                 verticalArrangement = Arrangement.SpaceAround,
                                 modifier = Modifier
@@ -767,7 +546,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 //
                             ) {
                                 Text(
-                                    text = "atividade complementar de equações fwdwfe...",
+                                    text = "Atividade complementar de equações.",
                                     textAlign = TextAlign.Center,
                                     fontSize = 12.sp
                                 )
@@ -811,8 +590,10 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             }
                         }
                     }
-                } else if (membros.value == true) {
+                }
 
+                //membros//
+                else if (membros.value == true) {
                     Row(
                         modifier = Modifier
                             .background(Color.White)
@@ -875,7 +656,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -951,7 +732,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -1015,7 +796,6 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                                 fontSize = 11.sp
                             )
 
-
                         }
                         Box(
                             modifier = Modifier
@@ -1037,7 +817,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -1113,7 +893,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -1198,7 +978,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -1274,7 +1054,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -1359,7 +1139,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -1435,7 +1215,7 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                             )
 
                             Text(
-                                text = ("Soma"),
+                                text = (" Soma"),
                                 modifier = Modifier
                                     .padding(top = 24.dp, start = 60.dp),
                                 fontSize = 10.sp
@@ -1458,18 +1238,60 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 
                         }
                     }
-                }
+                } else if (duvidas.value == true) {
+                    Row(
+                        modifier = Modifier
+                            .background(Color.White)
+                            .height(60.dp)  // Define a altura mínima
+                            .fillMaxWidth()
+                            .border(BorderStroke(1.dp, Color(0xffD9D9D9)))
 
+                    ) {
+                        Box {
+                            Image(
+                                painter = painterResource(id = R.drawable.usuario),
+                                contentDescription = "usuario",
+                                modifier = Modifier
+                                    .size(60.dp)
+                                    .padding(start = 15.dp)
+
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(20.dp))
+                        Box(
+                            modifier = Modifier
+                                .background(Color.White)
+                                .height(90.dp)
+                                .width(205.dp)
+                        ) {
+                            Text(
+                                text = "Matheus Noronha",
+                                modifier = Modifier
+                                    .padding(start = 4.dp, top = 5.dp),
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = ("Dúvida: Como resolver equações?"),
+                                modifier = Modifier
+                                    .padding(top = 28.dp, start = 6.dp),
+                                fontSize = 12.sp
+                            )
+
+
+                        }
+
+                    }
+                }
             }
         }
+        BarradeNavegacao(rememberNavController())
     }
-    BarradeNavegacao(controleDeNavegacao)
+
 }
 
-
-
-        @Preview(showBackground = true, showSystemUi = false)
+@Preview(showBackground = true, showSystemUi = false)
 @Composable
 fun TelaGrupoMentoriaPreview() {
-    TelaGrupoMentoria(controleDeNavegacao = NavHostController(LocalContext.current))
+    TelaGrupoMentoria(rememberNavController())
 }

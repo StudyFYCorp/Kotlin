@@ -74,29 +74,30 @@ fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
         }
 
         Box() {
-            Row() {
+            Row(
+                horizontalArrangement = Arrangement.End, // Alinha os itens à direita
+                modifier = Modifier.width(300.dp)
+            ) {
                 Image(
                     painter = painterResource(id = R.drawable.lupacaderno),
                     contentDescription = "",
-                    modifier = Modifier
-                        .size(30.dp)
+                    modifier = Modifier.size(30.dp)
                 )
 
                 Image(
                     painter = painterResource(id = R.drawable.ordem),
                     contentDescription = "",
-                    modifier = Modifier
-                        .size(30.dp)
+                    modifier = Modifier.size(30.dp)
                 )
 
                 Image(
                     painter = painterResource(id = R.drawable.trespontosconfig),
                     contentDescription = "",
-                    modifier = Modifier
-                        .size(30.dp)
+                    modifier = Modifier.size(30.dp)
                 )
             }
         }
+
 
         Box(modifier = Modifier
             .height(192.dp)
@@ -105,8 +106,8 @@ fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
         ){
             Column {
                 Box(){
-                    Text(text = "blablablablabla")
-                    Text(text = "21 de mar.")
+                    Text(text = "blablablablabla", modifier = Modifier.padding(10.dp))
+                    Text(text = "21 de mar.", modifier = Modifier.padding(25.dp))
                 }
             }
         }
