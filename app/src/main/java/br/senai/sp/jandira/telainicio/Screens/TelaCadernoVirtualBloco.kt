@@ -1,12 +1,15 @@
 package br.senai.sp.jandira.telainicio.Screens
 
+import android.system.Os.remove
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -14,10 +17,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -35,17 +43,29 @@ import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @Composable
 fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
+    // Gerenciando a lista de notas com estado
+    var notas by remember {
+        mutableStateOf(
+            listOf(
+                "Tectonismo",
+                "Geologia",
+                "Estrutura da Terra",
+                "Climatologia"
+            )
+        )
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(35.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Caderno Vitual")
+        // Cabeçalho
+        Text(text = "Caderno Virtual", fontSize = 24.sp, fontWeight = FontWeight.Bold)
 
         Column(
-            modifier = Modifier
-                .padding(25.dp),
+            modifier = Modifier.padding(vertical = 25.dp),
         ) {
             Text(
                 text = "Todas as notas",
@@ -54,69 +74,109 @@ fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
                 fontFamily = poppinsFontFamily,
                 fontWeight = FontWeight.Medium,
                 color = Color(0xFFFE9CE03),
-                modifier = Modifier
-                    .fillMaxWidth() // Faz com que o Text ocupe toda a largura disponível
-                    .padding(start = 10.dp) // Adiciona um pequeno padding, se necessário
-
+                modifier = Modifier.fillMaxWidth()
             )
 
             Text(
-                text = "Organize suas ideias e mantenha tudo em um só lugar\n",
+                text = "Organize suas ideias e mantenha tudo em um só lugar",
                 fontSize = 15.sp,
-                textAlign = TextAlign.Center, // Alinha o texto ao centro horizontalmente
+                textAlign = TextAlign.Center,
                 fontFamily = poppinsFontFamily,
                 color = Color(0xFFF9B9B9B),
                 fontWeight = FontWeight.Light,
-                modifier = Modifier
-                    .fillMaxWidth() // Faz com que o Text ocupe toda a largura disponível
-                    .padding(start = 10.dp) // Adiciona um pequeno padding, se necessário
+                modifier = Modifier.fillMaxWidth()
             )
         }
 
-        Box() {
-            Row(
-                horizontalArrangement = Arrangement.End, // Alinha os itens à direita
-                modifier = Modifier.width(300.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.lupacaderno),
-                    contentDescription = "",
-                    modifier = Modifier.size(30.dp)
-                )
+        // Ícones de Ação
+        Row(
+            horizontalArrangement = Arrangement.End,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 10.dp)
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.lupacaderno),
+                contentDescription = "Pesquisar",
+                modifier = Modifier.size(30.dp)
+            )
 
-                Image(
-                    painter = painterResource(id = R.drawable.ordem),
-                    contentDescription = "",
-                    modifier = Modifier.size(30.dp)
-                )
+            Spacer(modifier = Modifier.width(10.dp))
 
-                Image(
-                    painter = painterResource(id = R.drawable.trespontosconfig),
-                    contentDescription = "",
-                    modifier = Modifier.size(30.dp)
-                )
-            }
+            Image(
+                painter = painterResource(id = R.drawable.ordem),
+                contentDescription = "Ordenar",
+                modifier = Modifier.size(30.dp)
+            )
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.trespontosconfig),
+                contentDescription = "Configurações",
+                modifier = Modifier.size(30.dp)
+            )
         }
 
+        // Lista de Notas
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(300.dp)
+                .border(2.dp, Color.Black, RoundedCornerShape(20.dp))
+                .padding(10.dp)
+        ) {
+            LazyColumn {
+                items(notas) { nota ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp)
+                            .background(Color(0xFFF6F6F6), RoundedCornerShape(10.dp))
+                            .padding(10.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Column {
+                            Text(
+                                text = nota,
+                                fontSize = 18.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = "21 de mar.",
+                                fontSize = 14.sp,
+                                color = Color.Gray
+                            )
+                        }
 
-        Box(modifier = Modifier
-            .height(192.dp)
-            .width(298.dp)
-            .border(2.dp, Color.Black, RoundedCornerShape(20.dp))
-        ){
-            Column {
-                Box(){
-                    Text(text = "blablablablabla", modifier = Modifier.padding(10.dp))
-                    Text(text = "21 de mar.", modifier = Modifier.padding(25.dp))
+                        Icon(
+                            painter = painterResource(id = R.drawable.lixeira), // Adicione o ícone de lixeira no drawable
+                            contentDescription = "Excluir",
+                            modifier = Modifier
+                                .size(24.dp)
+                                .clickable {
+                                    // Remove o item da lista com base no índice
+                                    val index = notas.indexOf(nota)
+                                    if (index != -1) {
+                                        notas = notas
+                                            .toMutableList()
+                                            .apply { removeAt(index) }
+                                    }
+                                },
+                            tint = Color.Black
+                        )
+                    }
                 }
             }
         }
     }
+
     BarradeNavegacao(controledeNavegacao)
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview
 @Composable
-private fun BlocoCadernoVirtualPreview() {
-    BlocoCadernoVirtual(controledeNavegacao = NavHostController(LocalContext.current))
+fun BlocoCadernoVirtualPreview() {
+    BlocoCadernoVirtual (controledeNavegacao = rememberNavController())
 }
