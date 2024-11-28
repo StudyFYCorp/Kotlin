@@ -49,11 +49,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TelaInicioTheme {
-                //Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                // cadastroCat()
                 val controleDeNavegacao = rememberNavController()
 
-                NavHost(navController = controleDeNavegacao, startDestination = "inicio"){
+                NavHost(navController = controleDeNavegacao, startDestination = "TeladeAtividade" ){
 
                     composable(
                         route = "cadastro1/{tipoUsuario}",

@@ -42,6 +42,7 @@ import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
+import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -139,7 +140,7 @@ fun TelaCadastroProf(controleDeNavegacao: NavHostController) {
 
                 Row {
                     Button (
-                        onClick = { controleDeNavegacao?.navigate("" )},
+                        onClick = { controleDeNavegacao.navigate("" )},
                         modifier = Modifier
                             .offset(x = 150.dp, y = 90.dp)
                             .height(50.dp)

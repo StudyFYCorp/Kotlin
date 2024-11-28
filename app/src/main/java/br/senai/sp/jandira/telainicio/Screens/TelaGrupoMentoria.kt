@@ -42,6 +42,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -1461,85 +1462,14 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
 
             }
         }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(70.dp)
-                .background(Color(0xff302F2F))
-
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.livro),
-                contentDescription = "livros",
-                modifier = Modifier
-                    .size(50.dp)
-                    .padding(start = 20.dp)
-            )
-
-            Image(
-                painter = painterResource(id = R.drawable.caderno),
-                contentDescription = "caderno",
-                modifier = Modifier
-                    .size(50.dp)
-                    .padding(start = 20.dp)
-            )
-            Image(
-                painter = painterResource(id = R.drawable.trofeu),
-                contentDescription = "caderno",
-                modifier = Modifier
-                    .size(50.dp)
-                    .padding(start = 20.dp)
-            )
-            Image(
-                painter = painterResource(id = R.drawable.duvida),
-                contentDescription = "caderno",
-                modifier = Modifier
-                    .size(50.dp)
-                    .padding(start = 20.dp)
-            )
-            Image(
-                painter = painterResource(id = R.drawable.sinos),
-                contentDescription = "caderno",
-                modifier = Modifier
-                    .size(50.dp)
-                    .padding(start = 20.dp)
-            )
-
-            Image(
-                painter = painterResource(id = R.drawable.pontos),
-                contentDescription = "pontos",
-                modifier = Modifier
-                    .size(110.dp)
-                    .padding(start = 80.dp)
-                    .clickable {
-                        barraVisivel = !barraVisivel // Alterna a visibilidade da barra ao clicar
-                    }
-            )
-
-            // Se a barra estiver visível, exibe uma barra vertical com ícones
-            if (barraVisivel) {
-                Spacer(modifier = Modifier.width(16.dp)) // Espaçamento entre a imagem e a barra
-
-                // Barra de navegação vertical com ícones
-                Column(
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .width(56.dp)
-                        .background(Color.LightGray),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-
-                }
-            }
-        }
     }
-        }
+    BarradeNavegacao(controleDeNavegacao)
+}
 
 
 
         @Preview(showBackground = true, showSystemUi = false)
 @Composable
 fun TelaGrupoMentoriaPreview() {
-    TelaGrupoMentoria(rememberNavController())
+    TelaGrupoMentoria(controleDeNavegacao = NavHostController(LocalContext.current))
 }

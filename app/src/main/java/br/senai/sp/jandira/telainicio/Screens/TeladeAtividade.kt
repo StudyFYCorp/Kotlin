@@ -1,6 +1,7 @@
 package br.senai.sp.jandira.telainicio.Screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,6 +25,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -86,7 +88,10 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
                 .height(80.dp)){
                 Card (modifier = Modifier
                     .height(80.dp)
-                    .width(80.dp),
+                    .width(80.dp)
+                    .clickable {
+                        controleDeNavegacao.navigate("TelaMultiplaEscolha")
+                    },
                     colors = CardDefaults.cardColors(containerColor = Color(0xFF1AD3FB))
                 ) {
                 }
@@ -100,7 +105,10 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             ){
                 Card (modifier = Modifier
                     .height(80.dp)
-                    .width(80.dp),
+                    .width(80.dp)
+                    .clickable {
+                        controleDeNavegacao.navigate("TelaMultiplaEscolha")
+                    },
                     colors = CardDefaults.cardColors(containerColor = Color(0xFF1AD3FB))
                 ) {
                 }
@@ -111,7 +119,10 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
                 .height(80.dp)){
                 Card (modifier = Modifier
                     .height(80.dp)
-                    .width(80.dp),
+                    .width(80.dp)
+                    .clickable {
+                        controleDeNavegacao.navigate("TelaMultiplaEscolha")
+                    },
                     colors = CardDefaults.cardColors(containerColor = Color(0xFF1AD3FB))
                 ) {
                 }
@@ -124,7 +135,10 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             ){
                 Card (modifier = Modifier
                     .height(80.dp)
-                    .width(80.dp),
+                    .width(80.dp)
+                    .clickable {
+                        controleDeNavegacao.navigate("TelaMultiplaEscolha")
+                    },
                     colors = CardDefaults.cardColors(containerColor = Color(0xFF1AD3FB))
                 ) {
                 }
@@ -144,7 +158,7 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
                 fontSize = 20.sp,
             )}
 
-        BarradeNavegacao()
+        BarradeNavegacao(controleDeNavegacao)
 
     }
 
@@ -152,5 +166,5 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun TeladeAtividadePreview() {
-    TeladeAtividade(rememberNavController())
+    TeladeAtividade(controleDeNavegacao = NavHostController(LocalContext.current))
 }

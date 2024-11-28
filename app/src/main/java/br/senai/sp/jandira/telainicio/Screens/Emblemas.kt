@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -376,10 +377,14 @@ fun Emblemas(controledeNavegacao: NavHostController) {
             }
         }
     }
+    BarradeNavegacao(controledeNavegacao)
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun EmblemasPreview() {
-    Emblemas(rememberNavController())
+    Emblemas(controledeNavegacao = NavHostController(LocalContext.current))
 }
+
+
+

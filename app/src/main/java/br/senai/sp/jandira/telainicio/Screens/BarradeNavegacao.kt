@@ -35,7 +35,7 @@ import br.senai.sp.jandira.telainicio.R
 import kotlin.math.log
 
 @Composable
-fun BarradeNavegacao(controleDeNavegacao: NavHostController?= null){
+fun BarradeNavegacao(controleDeNavegacao: NavHostController){
     Column(modifier = Modifier.fillMaxSize()) {
         Spacer(modifier = Modifier.weight(1f))
 
@@ -62,7 +62,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController?= null){
                         modifier = Modifier
                             .size(35.dp)
                             .clickable {
-                                controleDeNavegacao?.navigate("inicio")
+                                controleDeNavegacao.navigate("TeladeAtividade")
 
                             },
                         painter = painterResource(id = R.drawable.livros),
@@ -81,7 +81,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController?= null){
                     Image(
                         modifier = Modifier.size(35.dp)
                             .clickable {
-                                controleDeNavegacao?.navigate("CadernoVirtual")
+                                controleDeNavegacao.navigate("TelaCadernoVirtualBloco")
                             },
                         painter = painterResource(id = R.drawable.caderno),
                         contentDescription = "Caderno virtual"
@@ -97,7 +97,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController?= null){
                     Image(
                         modifier = Modifier.size(35.dp)
                             .clickable {
-                                controleDeNavegacao?.navigate("Emblemas")
+                                controleDeNavegacao.navigate("Emblemas")
                             },
                         painter = painterResource(id = R.drawable.trofeu),
                         contentDescription = "Trofeu"
@@ -113,7 +113,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController?= null){
                     Image(
                         modifier = Modifier.size(35.dp)
                             .clickable {
-                                controleDeNavegacao?.navigate("grupoMentoria")
+                                controleDeNavegacao.navigate("grupoMentoria")
                             },
                         painter = painterResource(id = R.drawable.duvida),
                         contentDescription = "Ajuda"
@@ -129,7 +129,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController?= null){
                     Image(
                         modifier = Modifier.size(35.dp)
                             .clickable {
-                                controleDeNavegacao?.navigate("Notificacao")
+                                controleDeNavegacao.navigate("TelaNotificacao")
                             },
                         painter = painterResource(id = R.drawable.sinos),
                         contentDescription = "Notificação"

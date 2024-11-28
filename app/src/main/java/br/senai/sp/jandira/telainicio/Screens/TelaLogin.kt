@@ -203,7 +203,7 @@ fun TelaLogin(controleDeNavegacao: NavHostController) {
                     .align(alignment = Alignment.End)
             ) {
                 Button(
-                    onClick = { /* Ação do botão */ },
+                    onClick = { controleDeNavegacao.navigate("TeladeAtividade") },
                     modifier = Modifier
                         .width(150.dp)
                         .height(35.dp),
@@ -230,7 +230,7 @@ fun TelaLogin(controleDeNavegacao: NavHostController) {
                     Spacer(modifier = Modifier.width(10.dp))
                     Text(
                         modifier = Modifier
-                            .clickable { controleDeNavegacao?.navigate("inicio2") },
+                            .clickable { controleDeNavegacao.navigate("inicio2") },
                         color = Color(0xFFFEE101),
                         fontSize = 15.sp,
                         text = "Cadastre-se"
