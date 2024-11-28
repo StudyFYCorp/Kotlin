@@ -35,13 +35,14 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun TeladeAtividade(controleDeNavegacao: NavHostController){
+
     Column (modifier = Modifier
         .fillMaxSize()) {
-
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(70.dp)
+
 
         ) {
             Row(
@@ -52,7 +53,7 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
 
             ) {
                 Text(
-                    text = "Matemática 4º - Fund1",
+                    text = "Matemática - Fund1",
                     fontSize = 20.sp,
                 )
             }
@@ -156,12 +157,10 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             Text(
                 text = "Assunto 2 - Soma e subtração",
                 fontSize = 20.sp,
-            )}
-
-        BarradeNavegacao(controleDeNavegacao)
-
+            )
+        }
     }
-
+    BarradeNavegacao(controleDeNavegacao)
 }
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

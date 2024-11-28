@@ -82,39 +82,11 @@ fun RankdeAlunoMentor() {
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth(),
-                            horizontalArrangement = Arrangement.Center,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Image(
-                                modifier = Modifier.size(25.dp),
-                                painter = painterResource(id = R.drawable.estrela),
-                                contentDescription = "estrela"
-                            )
-                            Image(
-                                modifier = Modifier.size(25.dp),
-                                painter = painterResource(id = R.drawable.estrela),
-                                contentDescription = "estrela"
-                            )
-                            Image(
-                                modifier = Modifier.size(25.dp),
-                                painter = painterResource(id = R.drawable.estrela),
-                                contentDescription = "estrela"
-                            )
-                            Image(
-                                modifier = Modifier.size(25.dp),
-                                painter = painterResource(id = R.drawable.estrela),
-                                contentDescription = "estrela"
-                            )
-                            Image(
-                                modifier = Modifier.size(25.dp),
-                                painter = painterResource(id = R.drawable.anterior),
-                                contentDescription = "estrela na metade"
-                            )
-
-                        }
+                        Image(
+                            modifier = Modifier.width(55.dp),
+                            painter = painterResource(id = R.drawable.estrela),
+                            contentDescription = "estrela"
+                        )
 
                         Text(
                             text = "(130 avaliações)",

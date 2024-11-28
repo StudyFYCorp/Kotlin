@@ -119,7 +119,7 @@ fun RankdeAlunos(){
                                         modifier = Modifier
                                             .padding(top = 5.dp)
                                             .size(45.dp),
-                                        painter = painterResource(id = R.drawable.prataii),
+                                        painter = painterResource(id = R.drawable.grande),
                                         contentDescription = "Foto de Perfil1"
                                     )
 
@@ -130,7 +130,7 @@ fun RankdeAlunos(){
                                         //NOME VINDO DO BANCO
                                         Text(
                                             modifier = Modifier.padding(top = 20.dp),
-                                            text = "grande eweww...",
+                                            text = "grande el wey",
                                             fontSize = 10.sp
                                         )
 
@@ -250,7 +250,7 @@ fun RankdeAlunos(){
                                     modifier = Modifier
                                         .padding(top = 5.dp)
                                         .size(45.dp),
-                                    painter = painterResource(id = R.drawable.anteriorduplo),
+                                    painter = painterResource(id = R.drawable.tom),
                                     contentDescription = "Foto de Perfil"
                                 )
 

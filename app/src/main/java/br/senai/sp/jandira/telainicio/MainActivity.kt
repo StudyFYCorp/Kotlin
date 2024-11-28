@@ -51,7 +51,7 @@ class MainActivity : ComponentActivity() {
             TelaInicioTheme {
                 val controleDeNavegacao = rememberNavController()
 
-                NavHost(navController = controleDeNavegacao, startDestination = "TeladeAtividade" ){
+                NavHost(navController = controleDeNavegacao, startDestination = "inicio" ){
 
                     composable(
                         route = "cadastro1/{tipoUsuario}",
@@ -145,7 +145,7 @@ class MainActivity : ComponentActivity() {
                         Notificacao(controleDeNavegacao)
                     }
 
-                    composable(route = "perfil"){
+                    composable(route = "TelaPerfil"){
                         TelaPerfil(controleDeNavegacao)
                     }
 

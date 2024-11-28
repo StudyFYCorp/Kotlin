@@ -78,12 +78,6 @@ fun TelaPerfil(controledeNavegacao: NavHostController) {
             Spacer(modifier = Modifier.height(40.dp))
 
 
-            DesempenhodoAluno()
-
-
-            Spacer(modifier = Modifier.height(60.dp))
-
-
             RankdeAlunos()
 
 
