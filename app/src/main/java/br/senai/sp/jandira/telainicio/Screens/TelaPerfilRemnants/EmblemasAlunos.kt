@@ -54,12 +54,8 @@ fun EmblemasAlunos(){
             Text(text = "Ver todos",
                 fontFamily = poppinsFontFamily,
                 fontWeight = FontWeight.Medium,
-                fontSize = 30.sp)
+                fontSize = 20.sp)
 
-            Text(text = "Ver todos",
-                fontWeight = FontWeight.Light,
-                fontFamily = poppinsFontFamily,
-                fontSize = 23.sp)
         }
 
         //ADICIONAR UMA BARRA DE ROLAGEM

@@ -106,24 +106,6 @@ fun TelaInicio(controleDeNavegacao: NavHostController) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaInicioPreview() {

@@ -20,6 +20,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -29,6 +30,8 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -46,6 +49,13 @@ import br.senai.sp.jandira.telainicio.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TelaLogin(controleDeNavegacao: NavHostController) {
+    // Estado para os campos de email e senha
+    val email = remember { mutableStateOf("") }
+    val senha = remember { mutableStateOf("") }
+
+    // Estado para mensagem de erro
+    val mensagemErro = remember { mutableStateOf("") }
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -108,139 +118,116 @@ fun TelaLogin(controleDeNavegacao: NavHostController) {
                 text = "Por favor, faça login para continuar"
             )
 
-            Box() {
-                OutlinedTextField(
-                    trailingIcon = {
-                        IconButton(onClick = {}) {
-                            Icon(
-                                imageVector = Icons.Default.Email,
-                                contentDescription = "Caixa",
-                                tint = Color(0xFFFEE101)
-                            )
-                        }
-                    },
-                    value = "",
-                    onValueChange = {},
-                    modifier = Modifier
-                        .padding(top = 30.dp)
-                        .width(350.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = TextFieldDefaults.outlinedTextFieldColors(
-                        containerColor = Color.White, // Define a cor de fundo dentro do OutlinedTextField
-                        focusedBorderColor = Color(0xFFFEE101),
-                        unfocusedBorderColor = Color(0xFFFEE101),
-                        focusedLabelColor = Color(0xFFFEE101),
-                        unfocusedLabelColor = Color(0xFFFEE101)
-                    ),
-                    placeholder = {
-                        Text(
-                            text = "E-mail",
-                            color = Color.Black
+            // Campo de email
+            OutlinedTextField(
+                trailingIcon = {
+                    IconButton(onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Default.Email,
+                            contentDescription = "Email",
+                            tint = Color(0xFFFEE101)
                         )
                     }
-                )
-            }
-            Box() {
-                OutlinedTextField(
-                    trailingIcon = {
-                        IconButton(onClick = {}) {
-                            Icon(
-                                imageVector = Icons.Default.Lock,
-                                contentDescription = "Caixa",
-                                tint = Color(0xFFFEE101)
-                            )
-                        }
-                    },
-                    value = "",
-                    onValueChange = {},
-                    modifier = Modifier
-                        .padding(top = 20.dp)
-                        .width(350.dp),
-                    shape = RoundedCornerShape(10.dp),
-                    colors = TextFieldDefaults.outlinedTextFieldColors(
-                        containerColor = Color.White, // Define a cor de fundo dentro do OutlinedTextField
-                        focusedBorderColor = Color(0xFFFEE101),
-                        unfocusedBorderColor = Color(0xFFFEE101),
-                        focusedLabelColor = Color(0xFFFEE101),
-                        unfocusedLabelColor = Color(0xFFFEE101)
-                    ),
-                    placeholder = {
-                        Text(
-                            text = "Senha",
-                            color = Color.Black
-                        )
-                    }
-                )
-            }
-            Text(
-                modifier = Modifier.padding(top = 10.dp),
-                fontWeight = FontWeight.Light,
-                text = "Esqueceu a senha?"
+                },
+                value = email.value,
+                onValueChange = { email.value = it },
+                modifier = Modifier
+                    .padding(top = 30.dp)
+                    .width(350.dp),
+                shape = RoundedCornerShape(10.dp),
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    containerColor = Color.Transparent,
+                    focusedBorderColor = Color(0xFFE9CE03),
+                    unfocusedBorderColor = Color(0xFFE9CE03)
+                ),
+                label = { Text(text = "E-mail", color = Color.Black) }
             )
+
+            // Campo de senha
+            OutlinedTextField(
+                trailingIcon = {
+                    IconButton(onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Default.Lock,
+                            contentDescription = "Senha",
+                            tint = Color(0xFFFEE101)
+                        )
+                    }
+                },
+                value = senha.value,
+                onValueChange = { senha.value = it },
+                modifier = Modifier
+                    .width(350.dp),
+                shape = RoundedCornerShape(10.dp),
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    containerColor = Color.Transparent,
+                    focusedBorderColor = Color(0xFFE9CE03),
+                    unfocusedBorderColor = Color(0xFFE9CE03)
+                ),
+                label = { Text(text = "Senha", color = Color.Black) }
+            )
+
+            // Exibe mensagem de erro, se existir
+            if (mensagemErro.value.isNotEmpty()) {
+                Text(
+                    text = mensagemErro.value,
+                    color = Color.Red,
+                    modifier = Modifier.padding(top = 10.dp)
+                )
+            }
+
             Spacer(modifier = Modifier.height(30.dp))
 
+            // Botão de login
+            Button(
+                onClick = {
+                    if (email.value == "study@gmail.com" && senha.value == "studyfy") {
+                        // Limpa mensagem de erro
+                        mensagemErro.value = ""
+                        // Navega para a próxima tela
+                        controleDeNavegacao.navigate("TeladeAtividade")
+                    } else {
+                        // Exibe mensagem de erro
+                        mensagemErro.value = "E-mail ou senha incorretos. Tente novamente."
+                    }
+                },
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(35.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFFFEE101))
+            ) {
+                Text(
+                    text = "Logar",
+                    color = Color.Black,
+                    letterSpacing = 1.sp
+                )
+                Icon(
+                    modifier = Modifier.padding(start = 20.dp),
+                    imageVector = Icons.Filled.ArrowForward,
+                    contentDescription = "",
+                    tint = Color.Black
+                )
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
             Row {
                 Text(
                     fontSize = 15.sp,
-                    fontWeight = FontWeight.Black,
-                    text = "Ou cadastre-se com:"
+                    text = "Não tem uma conta?"
                 )
-                Image(
+                Spacer(modifier = Modifier.width(10.dp))
+                Text(
                     modifier = Modifier
-                        .padding(start = 10.dp)
-                        .height(20.dp)
-                        .width(20.dp),
-                    painter = painterResource(id = R.drawable.googleimg),
-                    contentDescription = "Google logo"
+                        .clickable { controleDeNavegacao.navigate("inicio2") },
+                    color = Color(0xFFFEE101),
+                    fontSize = 15.sp,
+                    text = "Cadastre-se"
                 )
-            }
-            Column(
-                horizontalAlignment = AbsoluteAlignment.Right,
-                verticalArrangement = Arrangement.Bottom,
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .fillMaxWidth()
-                    .align(alignment = Alignment.End)
-            ) {
-                Button(
-                    onClick = { controleDeNavegacao.navigate("TeladeAtividade") },
-                    modifier = Modifier
-                        .width(150.dp)
-                        .height(35.dp),
-                    colors = ButtonDefaults.buttonColors(Color(0xFFFEE101))
-                ) {
-                    Text(
-                        text = "Logar",
-                        color = Color.Black,
-                        letterSpacing = 1.sp
-                    )
-                    Icon(
-                        modifier = Modifier.padding(start = 20.dp),
-                        imageVector = Icons.Filled.ArrowForward,
-                        contentDescription = "",
-                        tint = Color.Black
-                    )
-                }
-                Spacer(modifier = Modifier.height(10.dp))
-                Row {
-                    Text(
-                        fontSize = 15.sp,
-                        text = "Não tem uma conta?"
-                    )
-                    Spacer(modifier = Modifier.width(10.dp))
-                    Text(
-                        modifier = Modifier
-                            .clickable { controleDeNavegacao.navigate("inicio2") },
-                        color = Color(0xFFFEE101),
-                        fontSize = 15.sp,
-                        text = "Cadastre-se"
-                    )
-                }
-
-            }
             }
         }
     }
+}
+
 
 
 
