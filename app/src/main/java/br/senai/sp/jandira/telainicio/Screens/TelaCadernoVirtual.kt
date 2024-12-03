@@ -77,7 +77,7 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
             Box(modifier = Modifier
                 .background(Color(0xFFFE9CE03))
                 .height(80.dp)
-                . width(400.dp)){
+                . width(500.dp)){
                 Row ( verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Start,
                     modifier = Modifier.fillMaxHeight()){
@@ -96,7 +96,7 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
         Box(modifier = Modifier
             .background(Color(0xFFFD9D9D9))
             .height(60.dp)
-            .width(400.dp)
+            .width(500.dp)
         ){
             Row(modifier = Modifier
                 .fillMaxSize()

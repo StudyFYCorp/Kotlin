@@ -97,7 +97,7 @@ fun TelaLogin(controleDeNavegacao: NavHostController) {
     }
     Box(
         modifier = Modifier
-            .offset(x = 20.dp, y = 250.dp)
+            .offset(x = 30.dp, y = 250.dp)
             .background(Color.White)
             .height(500.dp)
             .width(350.dp)
