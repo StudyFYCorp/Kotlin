@@ -76,7 +76,7 @@ fun Emblemas(controledeNavegacao: NavHostController) {
                                     .padding(top = 10.dp)
                                     .size(80.dp)
                                     .align(Alignment.TopCenter),
-                                painter = painterResource(id = R.drawable.primeirolugar),
+                                painter = painterResource(id = R.drawable.medalha),
                                 contentDescription = "Medalha"
                             )
                             Text(
@@ -149,7 +149,7 @@ fun Emblemas(controledeNavegacao: NavHostController) {
                                     .padding(top = 10.dp)
                                     .size(80.dp)
                                     .align(Alignment.TopCenter),
-                                painter = painterResource(id = R.drawable.livros),
+                                painter = painterResource(id = R.drawable.livro_degraus),
                                 contentDescription = "Livros Emblema"
                             )
                             Text(
@@ -183,7 +183,7 @@ fun Emblemas(controledeNavegacao: NavHostController) {
                                 Text(
                                     fontSize = 12.sp,
                                     fontFamily = poppinsFontFamily,
-                                    text = "Realizou xxx atividades"
+                                    text = "Realizou 12 atividades"
                                 )
 
 

@@ -72,7 +72,7 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
         ) {
 // Corpo da tela
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Spacer(modifier = Modifier.height(60.dp))
+
 
 // Pergunta
                 Box(
@@ -110,7 +110,6 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                     }
                 }
 
-                Spacer(modifier = Modifier.height(36.dp))
 
 // Título "Múltipla escolha"
                 Text(
@@ -148,7 +147,7 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                     }
                 }
 
-                Spacer(modifier = Modifier.height(24.dp))
+                Spacer(modifier = Modifier.height(5.dp))
 
          // Botão "Responder"
                 Button(
