@@ -178,12 +178,15 @@ fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
             }
         }
 
+        Spacer(modifier = Modifier.height(150.dp))
         Box(
             modifier = Modifier
                 .size(60.dp) // Define o tamanho do botão
                 .clip(CircleShape) // Torna o botão redondo
                 .background(Color.Yellow) // Cor de fundo do botão
                 .clickable { /* Ação do botão */ } // Ação de clique
+                .align(alignment = Alignment.End)
+
 
         ) {
             // Colocando o ícone dentro do botão
