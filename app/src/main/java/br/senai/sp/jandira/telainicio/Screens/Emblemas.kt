@@ -385,6 +385,3 @@ fun Emblemas(controledeNavegacao: NavHostController) {
 fun EmblemasPreview() {
     Emblemas(controledeNavegacao = NavHostController(LocalContext.current))
 }
-
-
-

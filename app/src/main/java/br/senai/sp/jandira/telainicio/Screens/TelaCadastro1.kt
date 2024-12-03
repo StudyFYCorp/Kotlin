@@ -129,15 +129,7 @@ fun TelaCadastro1(
     val etapa2 = remember { mutableStateOf(false) }
     val etapa3 = remember { mutableStateOf(false) }
 
-//    // Estado das caixas de seleção
-//    val mat = remember { mutableStateOf(false) }
-//    val lp = remember { mutableStateOf(false) }
-//    val his = remember { mutableStateOf(false) }
-//    val fis = remember { mutableStateOf(false) }
-//    val bio = remember { mutableStateOf(false) }
-//    val qui = remember { mutableStateOf(false) }
-//    val geo = remember { mutableStateOf(false) }
-//    val filo = remember { mutableStateOf(false) }
+
 
     val months = listOf(
         "Janeiro", "Fevereiro", "Março", "Abril",
@@ -582,16 +574,6 @@ fun TelaCadastro1(
                                     materias = idsMateriasSelecionadas
                                 )
 
-//                                    val alunoPost = Aluno(
-//                                        nome = "Aluno mobile",
-//                                        email = "aluno1@example.com",
-//                                        senha = "senha1",
-//                                        telefone = "11987654321",
-//                                        data_nascimento = "15-03-2003",
-//                                        serie = "1",
-//                                        materias = listOf(1, 2)
-//                                    )
-
                                 val call = RetrofitFactory().getAlunoService().postAluno(alunoPost)
                                 call.enqueue(object : Callback<Aluno> {
                                     override fun onResponse(call: Call<Aluno>, response: Response<Aluno>) {
@@ -607,16 +589,7 @@ fun TelaCadastro1(
                                         println("Erro: ${t.message}")
                                     }
                                 })
-                                //enviar aluno
-//                                    val enviarAluno = RetrofitFactory().getAlunosService().postAluno(
-//                                        aluno = Aluno(
-//                                            id = id.value,
-//                                            nome = nome.value,
-//                                            email = email.value,
-//                                            senha = senha.value,
-//                                            telefone = telefone.value
-//                                        )
-//                                    )
+
                             } else if (professor.value) {
                                 println("Você é um professor")
                                 // Mostrar campos ou mensagens para professor
