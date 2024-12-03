@@ -183,9 +183,9 @@ fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
             modifier = Modifier
                 .size(60.dp) // Define o tamanho do botão
                 .clip(CircleShape) // Torna o botão redondo
-
+                .background(Color(0xFFFE9CE03))
                 .align(alignment = Alignment.End)
-
+                .clickable { controledeNavegacao.navigate("TelaCadernoVirtual") }
         ) {
             // Colocando o ícone dentro do botão
             Icon(

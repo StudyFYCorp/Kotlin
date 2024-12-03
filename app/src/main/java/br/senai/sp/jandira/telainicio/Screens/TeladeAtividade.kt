@@ -182,6 +182,7 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             )
         }
     }
+    BarradeNavegacao(controleDeNavegacao)
 }
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

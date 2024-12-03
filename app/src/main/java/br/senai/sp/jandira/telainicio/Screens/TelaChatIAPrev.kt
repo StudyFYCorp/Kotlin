@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telainicio.R
+import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,13 +45,13 @@ fun TelaChatIA(controledeNavegacao: NavHostController) {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .background(color = Color(0xff302F2F))
+            .background(color = Color.White)
     ) {
         Column(
             modifier = Modifier
                 .height(60.dp)
-                .background(color = Color(0xff302F2F))
-                .fillMaxWidth() // Preenche a largura da tela
+                .background(color = Color.White)
+                .fillMaxWidth()
         ) {
             Text(
                 "ChatIA",
@@ -58,12 +59,12 @@ fun TelaChatIA(controledeNavegacao: NavHostController) {
                     .align(alignment = Alignment.CenterHorizontally)
                     .padding(top = 20.dp),
                 fontSize = 20.sp,
-                color = Color.White
+                color = Color.Black
             )
         }
         Column(
             modifier = Modifier
-                .background(Color(0xff302F2F))
+                .background(Color.White)
                 .height(570.dp)
         ) {
             Image(
@@ -75,18 +76,19 @@ fun TelaChatIA(controledeNavegacao: NavHostController) {
             )
             Text(
                 "Converse com nosso\n" +
-                        "calabreso para " +
+                        "mascote para " +
                         "tirar dúvidas superficiais", modifier = Modifier
                     .padding(start = 80.dp),
-                color = Color.White,
-                fontSize = 20.sp
+                color = Color.Black,
+                fontSize = 20.sp,
+                fontFamily = poppinsFontFamily
             )
         }
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .height(80.dp)
-                .background(Color(0xff302F2F))
+                .background(Color.White)
                 .padding(horizontal = 25.dp)
         ) {
             OutlinedTextField(
@@ -95,7 +97,7 @@ fun TelaChatIA(controledeNavegacao: NavHostController) {
                         Icon(
                             imageVector = Icons.Default.ArrowForward,
                             contentDescription = "entrar",
-                            tint = Color(0xff302F2F)
+                            tint = Color.Black
                         )
                     }
                 },
@@ -104,8 +106,8 @@ fun TelaChatIA(controledeNavegacao: NavHostController) {
                 modifier = Modifier.fillMaxWidth().height(50.dp),
                 shape = RoundedCornerShape(20.dp),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
-                    containerColor = Color(0xFF666260),
-                    focusedBorderColor = Color(0xFF666260),
+                    containerColor = Color.Gray,
+                    focusedBorderColor = Color.White,
                     unfocusedBorderColor = Color(0xFF666260),
                 ),
                 placeholder = {
@@ -117,68 +119,11 @@ fun TelaChatIA(controledeNavegacao: NavHostController) {
                 }
             )
         }
-        Column (
-            verticalArrangement = Arrangement.Bottom,
-            modifier = Modifier.fillMaxHeight().padding(bottom = 80.dp),
-        ){
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(70.dp)
-                    .background(Color(0xff302F2F)).padding(top = 10.dp)
-
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.livro),
-                    contentDescription = "livros",
-                    modifier = Modifier
-                        .size(50.dp)
-                        .padding(start = 20.dp)
-                )
-
-                Image(
-                    painter = painterResource(id = R.drawable.caderno),
-                    contentDescription = "caderno",
-                    modifier = Modifier
-                        .size(50.dp)
-                        .padding(start = 20.dp)
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.trofeu),
-                    contentDescription = "caderno",
-                    modifier = Modifier
-                        .size(50.dp)
-                        .padding(start = 20.dp)
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.duvida),
-                    contentDescription = "caderno",
-                    modifier = Modifier
-                        .size(50.dp)
-                        .padding(start = 20.dp)
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.sinos),
-                    contentDescription = "caderno",
-                    modifier = Modifier
-                        .size(50.dp)
-                        .padding(start = 20.dp)
-                )
-
-                Image(
-                    painter = painterResource(id = R.drawable.pontos),
-                    contentDescription = "pontos",
-                    modifier = Modifier
-                        .size(100.dp)
-                        .height(100.dp).padding(start = 60.dp)
-
-                )
-
             }
+    BarradeNavegacao(controledeNavegacao)
         }
-    }
-}
+
+
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

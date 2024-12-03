@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -75,30 +76,30 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
 
 
     Column {
-            Box(modifier = Modifier
-                .background(Color(0xFFFE9CE03))
-                .height(80.dp)
-
-                Row ( verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start,
-                    modifier = Modifier.fillMaxHeight()){
-                    Icon(imageVector = Icons.Default.ArrowBack,
-                        contentDescription = "",
-                        modifier = Modifier
-                            .height(40.dp)
-                            .width(40.dp)
-                            .clickable { controledeNavegacao.navigate("TelaCadernoVirtualBloco") }
-                    )
-                    Text(text = "Titulo",
-                        fontSize = 30.sp
-                        )
-                }
+        Box(modifier = Modifier
+            .background(Color(0xFFFE9CE03))
+            .height(80.dp)
+            .fillMaxWidth()){
+            Row ( verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start,
+                modifier = Modifier.fillMaxHeight()){
+                Icon(imageVector = Icons.Default.ArrowBack,
+                    contentDescription = "",
+                    modifier = Modifier
+                        .height(50.dp)
+                        .width(40.dp)
+                        .clickable { controledeNavegacao.navigate("TelaCadernoVirtualBloco") }
+                )
+                Text(text = "Titulo",
+                    fontSize = 30.sp
+                )
             }
+        }
 
         Box(modifier = Modifier
             .background(Color(0xFFFD9D9D9))
-            .height(60.dp)
-            .width(500.dp)
+            .height(70.dp)
+            .fillMaxWidth()
         ){
             Row(modifier = Modifier
                 .fillMaxSize()
@@ -106,12 +107,12 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                 Image(painter = painterResource(id = R.drawable.estilotexto),
-                        contentDescription = "",
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                        )
+                Image(painter = painterResource(id = R.drawable.estilotexto),
+                    contentDescription = "",
+                    modifier = Modifier
+                        .height(50.dp)
+                        .width(50.dp)
+                )
                 Image(painter = painterResource(id = R.drawable.negrito),
                     contentDescription = "",
                     modifier = Modifier
@@ -149,6 +150,7 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
             )
 
         }
+
     }
     BarradeNavegacao(controledeNavegacao)
 }

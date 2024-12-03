@@ -106,7 +106,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController) {
                                 modifier = Modifier
                                     .size(35.dp)
                                     .clickable {
-                                        controleDeNavegacao.navigate("TelaChatIaConversa")
+                                        controleDeNavegacao.navigate("TelaChatIAPrev")
                                     },
                                 painter = painterResource(id = R.drawable.chatia),
                                 contentDescription = "Chat IA"

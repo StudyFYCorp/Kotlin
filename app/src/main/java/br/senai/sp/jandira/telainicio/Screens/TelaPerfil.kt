@@ -8,8 +8,10 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,8 +34,8 @@ fun TelaPerfil(controledeNavegacao: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(start = 10.dp, end = 10.dp)
-            .verticalScroll(scrollState)
+            .verticalScroll(scrollState),
+        horizontalAlignment = Alignment.CenterHorizontally
 
 
     ) {
@@ -72,7 +74,7 @@ fun TelaPerfil(controledeNavegacao: NavHostController) {
             NomeFoto()
 
 
-            InformacoesdoAluno()
+            InformacoesdoAluno(controledeNavegacao)
 
 
             Spacer(modifier = Modifier.height(40.dp))
@@ -80,14 +82,12 @@ fun TelaPerfil(controledeNavegacao: NavHostController) {
 
             RankdeAlunos()
 
+            EmblemasAlunos(controledeNavegacao)
 
-            RankdeAlunoMentor()
-
-
-            EmblemasAlunos()
-
+        Column(modifier = Modifier.height(130.dp).width(1.dp)){}
 
     }
+    BarradeNavegacao(controledeNavegacao)
 }
 
 

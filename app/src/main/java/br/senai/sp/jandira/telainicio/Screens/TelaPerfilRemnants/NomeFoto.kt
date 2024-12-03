@@ -31,13 +31,13 @@ import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 
 @Composable
-fun NomeFoto(){
+fun NomeFoto() {
 
-    Box(
-        modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth(),
-    ) {
+    Column (
+        modifier = Modifier.fillMaxHeight().fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally
+
+    ){
         Column(
             modifier = Modifier
                 .padding(top = 45.dp)
@@ -46,8 +46,9 @@ fun NomeFoto(){
                     shape = RoundedCornerShape(8.dp)
                 )
                 .height(190.dp)
-                .width(360.dp)
-        ) {
+                .width(360.dp),
+
+            ) {
             Image(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
@@ -76,7 +77,7 @@ fun NomeFoto(){
 
                         fontWeight = FontWeight.Medium,
 
-                        fontSize = 30.sp,
+                        fontSize = 25.sp,
                     )
                 }
 

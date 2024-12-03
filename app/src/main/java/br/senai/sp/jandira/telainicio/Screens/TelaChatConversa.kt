@@ -53,7 +53,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = Color(0xff302F2F))
+                .background(color = Color.White)
                 .padding(20.dp)
         ) {
             Row(
@@ -65,13 +65,13 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                         .padding(top = 5.dp)
                         .clickable { controledeNavegacao.navigate("TeladeAtividade") },
                     fontSize = 15.sp,
-                    color = Color.White
+                    color = Color.Black
                 )
                 Spacer(Modifier.weight(0.8f))
                 Text(
                     text = "Chat",
                     fontSize = 20.sp,
-                    color = Color.White
+                    color = Color.Black
                 )
                 Spacer(Modifier.weight(1f))
                 Image(
@@ -104,7 +104,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                     text = "Como posso ajudar?",
                     modifier = Modifier.padding(8.dp),
                     fontSize = 15.sp,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
 
@@ -116,15 +116,15 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
             ) {
                 Box(
                     modifier = Modifier
-                        .background(Color.White, shape = RoundedCornerShape(50.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(50.dp))
                         .height(50.dp)
                         .widthIn(max = 200.dp)
                         .padding(16.dp)
                 ) {
                     Text(
                         text = "Como eu faço soma de três Números?",
-                        fontSize = 13.sp,
-                        color = Color.Black
+                        fontSize = 10.sp,
+                        color = Color.White
                     )
                 }
             }
@@ -148,7 +148,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                     text = "É só você fazer 3+3+3 = 9",
                     modifier = Modifier.padding(8.dp),
                     fontSize = 15.sp,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
 
@@ -160,7 +160,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
             ) {
                 Box(
                     modifier = Modifier
-                        .background(Color.White, shape = RoundedCornerShape(50.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(50.dp))
                         .height(50.dp)
                         .widthIn(max = 300.dp)
                         .padding(16.dp)
@@ -168,7 +168,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                     Text(
                         text = "Obrigada!! Esclareceu minha dúvida!!",
                         fontSize = 13.sp,
-                        color = Color.Black
+                        color = Color.White
                     )
                 }
             }
@@ -192,7 +192,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                     text = "Não precisa agradecer, precisando é só chamar",
                     modifier = Modifier.padding(8.dp),
                     fontSize = 15.sp,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
 
@@ -204,15 +204,15 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
             ) {
                 Box(
                     modifier = Modifier
-                        .background(Color.White, shape = RoundedCornerShape(50.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(50.dp))
                         .height(50.dp)
                         .widthIn(max = 200.dp)
                         .padding(16.dp)
                 ) {
                     Text(
                         text = "Como eu faço soma de três Números?",
-                        fontSize = 13.sp,
-                        color = Color.Black
+                        fontSize = 10.sp,
+                        color = Color.White
                     )
                 }
             }
@@ -236,7 +236,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                     text = "É só você fazer 3+3+3 = 9",
                     modifier = Modifier.padding(8.dp),
                     fontSize = 15.sp,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
 
@@ -248,7 +248,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
             ) {
                 Box(
                     modifier = Modifier
-                        .background(Color.White, shape = RoundedCornerShape(50.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(50.dp))
                         .height(50.dp)
                         .widthIn(max = 300.dp)
                         .padding(16.dp)
@@ -256,7 +256,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                     Text(
                         text = "Obrigada!! Esclareceu minha dúvida!!",
                         fontSize = 13.sp,
-                        color = Color.Black
+                        color = Color.White
                     )
                 }
             }
@@ -280,7 +280,8 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                     text = "Não precisa agradecer, precisando é só chamar",
                     modifier = Modifier.padding(8.dp),
                     fontSize = 15.sp,
-                    color = Color.White
+                    color = Color.Black
+
                 )
             }
 
@@ -317,6 +318,7 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
             )
         }
     }
+
 }
 
 @Preview(showBackground = true, showSystemUi =  true)

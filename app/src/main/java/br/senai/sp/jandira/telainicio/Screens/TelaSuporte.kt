@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -14,6 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,7 +41,8 @@ fun Suporte(controledeNavegacao: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
 
         Row {
-            Text(text = "Central de ajuda",
+            Text(
+                text = "Central de ajuda",
                 fontFamily = poppinsFontFamily,
                 fontWeight = FontWeight.Medium
             )
@@ -54,10 +57,21 @@ fun Suporte(controledeNavegacao: NavHostController) {
                     .size(120.dp)
                 )
 
-        Text(text = "Como podemos ajudar?",
-            fontFamily = poppinsFontFamily,
-            fontWeight = FontWeight.Medium
+
+            Text(
+                text = "Como podemos ajudar?",
+                fontFamily = poppinsFontFamily,
+                fontWeight = FontWeight.Medium
             )
+        Box(modifier = Modifier
+            .width(200.dp)
+            .height(2.dp)
+            .background(
+                color = Color(0xFFFEE101)
+        ))
+
+
+
 
         Spacer(modifier = Modifier.height(30.dp))
 
@@ -70,7 +84,12 @@ fun Suporte(controledeNavegacao: NavHostController) {
                     color = Color(0xFFFD9D9D9),
                     shape = RoundedCornerShape(20.dp)
                 )
-            )
+            ) {
+                Text(modifier = Modifier.align(Alignment.Center),
+                    text = "Primeiros passos",
+                    fontSize = 20.sp,
+                    fontFamily = poppinsFontFamily)
+            }
 
             Spacer(modifier = Modifier.height(10.dp))
 
@@ -81,7 +100,12 @@ fun Suporte(controledeNavegacao: NavHostController) {
                     color = Color(0xFFFD9D9D9),
                     shape = RoundedCornerShape(20.dp)
                 )
-            )
+            ) {
+                Text(modifier = Modifier.align(Alignment.Center),
+                    text = "Grupos de Mentoria",
+                    fontSize = 20.sp,
+                    fontFamily = poppinsFontFamily)
+            }
 
             Spacer(modifier = Modifier.height(10.dp))
 
@@ -92,7 +116,12 @@ fun Suporte(controledeNavegacao: NavHostController) {
                     color = Color(0xFFFD9D9D9),
                     shape = RoundedCornerShape(20.dp)
                 )
-            )
+            ) {
+                Text(modifier = Modifier.align(Alignment.Center),
+                    text = "Ranking",
+                    fontSize = 20.sp,
+                    fontFamily = poppinsFontFamily)
+            }
 
             Spacer(modifier = Modifier.height(10.dp))
 
@@ -103,7 +132,12 @@ fun Suporte(controledeNavegacao: NavHostController) {
                     color = Color(0xFFFD9D9D9),
                     shape = RoundedCornerShape(20.dp)
                 )
-            )
+            ) {
+                Text(modifier = Modifier.align(Alignment.Center),
+                    text = "Chat",
+                    fontSize = 20.sp,
+                    fontFamily = poppinsFontFamily)
+            }
         }
 
         Spacer(modifier = Modifier.height(60.dp))
@@ -131,6 +165,7 @@ fun Suporte(controledeNavegacao: NavHostController) {
 
         }
     }
+    BarradeNavegacao(controledeNavegacao)
 }
 
 @Preview(showBackground = true, showSystemUi = true)

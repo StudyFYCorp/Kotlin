@@ -50,7 +50,7 @@ fun Notificacao(controledeNavegacao: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
         Column(
             modifier = Modifier
-                .height(170.dp)
+                .height(190.dp)
                 .width(330.dp)
                 .shadow(8.dp, shape = RoundedCornerShape(8.dp))
                 .clip(RoundedCornerShape(8.dp))
@@ -74,7 +74,7 @@ fun Notificacao(controledeNavegacao: NavHostController) {
                 Column(
                     modifier = Modifier
                         .padding(start = 10.dp, end = 10.dp)
-                        .fillMaxHeight()
+                        .height(200.dp)
                         .width(130.dp)
                 ) {
                     Column(
@@ -84,12 +84,12 @@ fun Notificacao(controledeNavegacao: NavHostController) {
                     ) {
                         Spacer(modifier = Modifier.weight(1f))
                         Text(
+                            modifier = Modifier.height(40.dp),
                             text = "Você terminou a temporada com 420pts.",
                             fontFamily = poppinsFontFamily,
                             fontSize = 10.sp
                         )
                     }
-                    Spacer(modifier = Modifier.height(40.dp))
 
                     Text(
                         text = "Terminou em #1 lugar",
@@ -152,7 +152,7 @@ fun Notificacao(controledeNavegacao: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
         Column(
             modifier = Modifier
-                .height(170.dp)
+                .height(190.dp)
                 .width(330.dp)
                 .shadow(8.dp, shape = RoundedCornerShape(8.dp))
                 .clip(RoundedCornerShape(8.dp))
@@ -186,12 +186,12 @@ fun Notificacao(controledeNavegacao: NavHostController) {
                     ) {
                         Spacer(modifier = Modifier.weight(1f))
                         Text(
+                            modifier = Modifier.height(40.dp),
                             text = "Você terminou a temporada com 420pts.",
                             fontFamily = poppinsFontFamily,
                             fontSize = 10.sp
                         )
                     }
-                    Spacer(modifier = Modifier.height(40.dp))
 
                     Text(
                         text = "Terminou em #1 lugar",
@@ -254,7 +254,7 @@ fun Notificacao(controledeNavegacao: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
         Column(
             modifier = Modifier
-                .height(170.dp)
+                .height(190.dp)
                 .width(330.dp)
                 .shadow(8.dp, shape = RoundedCornerShape(8.dp))
                 .clip(RoundedCornerShape(8.dp))
@@ -288,12 +288,12 @@ fun Notificacao(controledeNavegacao: NavHostController) {
                     ) {
                         Spacer(modifier = Modifier.weight(1f))
                         Text(
+                            modifier = Modifier.height(40.dp),
                             text = "Você terminou a temporada com 420pts.",
                             fontFamily = poppinsFontFamily,
                             fontSize = 10.sp
                         )
                     }
-                    Spacer(modifier = Modifier.height(40.dp))
 
                     Text(
                         text = "Terminou em #1 lugar",

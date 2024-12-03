@@ -14,28 +14,32 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.telainicio.Screens.TelaPerfil
 import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 
 @Composable
-fun InformacoesdoAluno(){
+fun InformacoesdoAluno(controleDeNavegacao: NavHostController){
 
 
     Column(
         modifier = Modifier
-            .padding(start = 10.dp)
             .height(170.dp)
-            .fillMaxWidth()
-
+            .fillMaxWidth(),
 
     ) {
+
+        Column (horizontalAlignment = Alignment.CenterHorizontally
+        ){
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -56,7 +60,7 @@ fun InformacoesdoAluno(){
 
                         fontWeight = FontWeight.Medium,
 
-                        fontSize = 20.sp
+                        fontSize = 17.sp
                     )
                     Text(
                         text = "Historia",
@@ -129,7 +133,7 @@ fun InformacoesdoAluno(){
                     .offset(y = -10.dp)
                     .height(50.dp)
                     .width(150.dp),
-                onClick = {},
+                onClick = {controleDeNavegacao.navigate("GrupoMentoria")},
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFEE101)),
                 shape = RoundedCornerShape(8.dp)
             ) {
@@ -164,7 +168,7 @@ fun InformacoesdoAluno(){
                         fontWeight = FontWeight.Bold,
                         fontFamily = poppinsFontFamily,
 
-                        fontSize = 20.sp
+                        fontSize = 13.sp
                     )
                     Text(
                         text = "Segunda Guerra Mundial",
@@ -176,9 +180,10 @@ fun InformacoesdoAluno(){
         }
     }
 }
+}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun InformacoesdoAlunoPreview() {
-    InformacoesdoAluno()
+    InformacoesdoAluno(controleDeNavegacao = NavHostController(LocalContext.current))
 }

@@ -27,7 +27,7 @@ import br.senai.sp.jandira.telainicio.ui.theme.poppinsFontFamily
 
 @Composable
 fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
-// Estados para rastrear a opção selecionada e o feedback visual
+    // Estados para rastrear a opção selecionada e o feedback visual
     var selectedOption by remember { mutableStateOf<String?>(null) }
     var feedbackColor by remember { mutableStateOf(Color.Transparent) }
     var feedbackMessage by remember { mutableStateOf("") }
@@ -39,7 +39,7 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
             .fillMaxSize()
             .background(Color.White)
     ) {
-// Barra superior
+        // Barra superior
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -70,18 +70,15 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                 .padding(16.dp),
             contentAlignment = Alignment.TopCenter
         ) {
-// Corpo da tela
+            // Corpo da tela
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-
-
-// Pergunta
+                // Pergunta
                 Box(
                     modifier = Modifier
                         .width(300.dp)
                         .height(100.dp)
                         .padding(8.dp)
-                        .background(Color.Transparent, shape =
-                        RoundedCornerShape(8.dp))
+                        .background(Color.Transparent, shape = RoundedCornerShape(8.dp))
                 ) {
                     Card(
                         modifier = Modifier
@@ -110,8 +107,7 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                     }
                 }
 
-
-// Título "Múltipla escolha"
+                // Título "Múltipla escolha"
                 Text(
                     text = "↔ Múltipla escolha",
                     fontSize = 18.sp,
@@ -121,7 +117,7 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-// Opções de resposta
+                // Opções de resposta
                 val options = listOf("Rio de Janeiro", "São Paulo",
                     "Brasília", "Salvador", "Recife")
                 options.forEach { option ->
@@ -129,14 +125,12 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                         onClick = { selectedOption = option },
                         shape = RoundedCornerShape(16.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = if (selectedOption ==
-                                option) Color(0xFFFFEB3B) else Color.White
+                            containerColor = if (selectedOption == option) Color(0xFFFFEB3B) else Color.White
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 8.dp)
-                            .border(1.dp, Color.Black,
-                                RoundedCornerShape(26.dp))
+                            .border(1.dp, Color.Black, RoundedCornerShape(26.dp))
                     ) {
                         Text(
                             text = option,
@@ -149,10 +143,10 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
 
                 Spacer(modifier = Modifier.height(5.dp))
 
-         // Botão "Responder"
+                // Botão "Responder"
                 Button(
                     onClick = {
-                      // Define o feedback com base na resposta
+                        // Define o feedback com base na resposta
                         showFeedback = true
                         if (selectedOption == correctAnswer) {
                             feedbackColor = Color(0xFF0B7513) // Verde
@@ -161,12 +155,9 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                             feedbackColor = Color(0xFFB71C1C) // Vermelho
                             feedbackMessage = " QUE PENA, \n VOCÊ ERROU!"
                         }
-
-
                     },
                     shape = RoundedCornerShape(50),
-                    colors =
-                    ButtonDefaults.buttonColors(containerColor = Color(0xFFFFEB3B)),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFEB3B)),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 4.dp)
@@ -179,9 +170,29 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                         modifier = Modifier.padding(vertical = 8.dp)
                     )
                 }
+
+                // Botão "Voltar"
+                Spacer(modifier = Modifier.height(16.dp)) // Espaço entre os botões
+                Button(
+                    onClick = {
+                        controledeNavegacao.popBackStack()
+                    },
+                    shape = RoundedCornerShape(50),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray),
+                    modifier = Modifier
+                        .width(200.dp)
+                        .padding(vertical = 4.dp)
+                ) {
+                    Text(
+                        text = "Voltar",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black,
+                        modifier = Modifier.padding(vertical = 8.dp)
+                    )
+                }
             }
 
-// Feedback visual
             if (showFeedback) {
                 Box(
                     modifier = Modifier
@@ -195,8 +206,7 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Image(
                             painter = painterResource(
-                                id = if (feedbackColor ==
-                                    Color(0xFF0B7513)) R.drawable.calabresofeliz else
+                                id = if (feedbackColor == Color(0xFF0B7513)) R.drawable.calabresofeliz else
                                     R.drawable.calabresobravo
                             ),
                             contentDescription = "Feedback Imagem",
@@ -217,17 +227,9 @@ fun TelaMultiplaEscolha(controledeNavegacao: NavHostController) {
     BarradeNavegacao(rememberNavController())
 }
 
+
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun PreviewTelaMultiplaEscolha() {
     TelaMultiplaEscolha(rememberNavController())
 }
-
-
-//Text(
-//text = it,
-//color = if (it == "Você acertou!") Color.Green else Color.Red,
-//fontSize = 18.sp,
-//fontWeight = FontWeight.Bold,
-//modifier = Modifier.align(Alignment.CenterHorizontally)
-//)

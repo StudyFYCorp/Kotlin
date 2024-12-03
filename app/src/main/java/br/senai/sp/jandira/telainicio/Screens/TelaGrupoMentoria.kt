@@ -1285,8 +1285,8 @@ fun TelaGrupoMentoria(controleDeNavegacao: NavHostController) {
                 }
             }
         }
-        BarradeNavegacao(rememberNavController())
     }
+    BarradeNavegacao(controleDeNavegacao)
 
 }
 

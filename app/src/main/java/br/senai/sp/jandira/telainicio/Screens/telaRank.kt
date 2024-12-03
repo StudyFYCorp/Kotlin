@@ -1017,6 +1017,7 @@ fun TelaRankeamento(controledeNavegacao: NavHostController) {
             }
         }
     }
+    BarradeNavegacao(controledeNavegacao)
 }
 
 @Preview(showBackground = true, showSystemUi = true)

@@ -111,6 +111,7 @@ fun SuporteProblema(controledeNavegacao: NavHostController) {
 
         }
     }
+    BarradeNavegacao(controledeNavegacao)
 }
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
