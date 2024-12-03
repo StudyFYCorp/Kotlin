@@ -84,7 +84,9 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             Text(
                 text = "Assunto 1 - Soma e subtração",
                 fontSize = 20.sp,
-            )}
+            )
+        }
+
         Column (modifier = Modifier
             .padding(start = 40.dp, top = 40.dp, bottom = 20.dp, end = 40.dp)
             .fillMaxWidth()
@@ -180,7 +182,6 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             )
         }
     }
-    BarradeNavegacao(controleDeNavegacao)
 }
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

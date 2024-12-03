@@ -4,6 +4,7 @@ import CadernoVirtualResponse
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -77,7 +78,7 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
             Box(modifier = Modifier
                 .background(Color(0xFFFE9CE03))
                 .height(80.dp)
-                . width(500.dp)){
+
                 Row ( verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Start,
                     modifier = Modifier.fillMaxHeight()){
@@ -86,6 +87,7 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
                         modifier = Modifier
                             .height(40.dp)
                             .width(40.dp)
+                            .clickable { controledeNavegacao.navigate("TelaCadernoVirtualBloco") }
                     )
                     Text(text = "Titulo",
                         fontSize = 30.sp
@@ -147,8 +149,8 @@ fun CadernoVirtual(controledeNavegacao: NavHostController) {
             )
 
         }
-
     }
+    BarradeNavegacao(controledeNavegacao)
 }
 
 @Preview(showBackground = true, showSystemUi = true)

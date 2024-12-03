@@ -2,6 +2,7 @@ package br.senai.sp.jandira.telainicio.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -61,7 +62,8 @@ fun ChatConversa(controledeNavegacao: NavHostController) {
                 Text(
                     text = "Sair do Chat",
                     modifier = Modifier
-                        .padding(top = 5.dp),
+                        .padding(top = 5.dp)
+                        .clickable { controledeNavegacao.navigate("TeladeAtividade") },
                     fontSize = 15.sp,
                     color = Color.White
                 )
