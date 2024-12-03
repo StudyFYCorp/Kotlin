@@ -183,8 +183,8 @@ fun BlocoCadernoVirtual(controledeNavegacao: NavHostController) {
             modifier = Modifier
                 .size(60.dp) // Define o tamanho do botão
                 .clip(CircleShape) // Torna o botão redondo
-                .background(Color.Yellow) // Cor de fundo do botão
-                .clickable { /* Ação do botão */ } // Ação de clique
+                .background(Color(0xfffFEE101)) // Cor de fundo do botão
+                .clickable {  controledeNavegacao.navigate("TelaCadernoVirtual") } // Ação de clique
                 .align(alignment = Alignment.End)
 
 

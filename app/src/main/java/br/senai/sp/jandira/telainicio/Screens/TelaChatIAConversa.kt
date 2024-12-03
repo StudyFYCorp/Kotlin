@@ -2,6 +2,7 @@ package br.senai.sp.jandira.telainicio.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,16 +36,26 @@ fun TelaChatConversa(controledeNavegacao: NavHostController) {
             .padding(20.dp)
 
     ) {
+        Row {
+            Text(
+                text = "Sair do Chat",
+                modifier = Modifier
+                    .padding(top = 5.dp)
+                    .clickable { controledeNavegacao.navigate("TeladeAtividade") },
+                fontSize = 15.sp,
+                color = Color.White
+            )
+            Text(
+                text = "ChatIA",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .padding(top = 2.dp),
+                fontSize = 20.sp,
+                color = Color.White
+            )
+        }
 
-        Text(
-            text = "ChatIA",
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .padding(top = 16.dp),
-            fontSize = 20.sp,
-            color = Color.White
-        )
 
         // Chat content
         Spacer(modifier = Modifier.height(10.dp))
@@ -108,7 +119,7 @@ fun TelaChatConversa(controledeNavegacao: NavHostController) {
                     .padding(16.dp)
             ) {
                 Text(
-                    text = "Você vai dominar o mundo?",
+                    text = "",
                     fontSize = 13.sp,
                     color = Color.Black
                 )
@@ -133,7 +144,7 @@ fun TelaChatConversa(controledeNavegacao: NavHostController) {
             )
 
             Text(
-                text = "Se quiser sim, mano 🤪🙄",
+                text = "",
                 modifier = Modifier.padding(8.dp),
                 fontSize = 15.sp,
                 color = Color.White

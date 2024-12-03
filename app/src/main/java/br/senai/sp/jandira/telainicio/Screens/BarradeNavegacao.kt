@@ -54,6 +54,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController) {
                 .align(Alignment.End)
                 .height(170.dp)
                 .width(70.dp)
+
         ) {
             if (isBoxVisible) {
                 Box(
@@ -136,16 +137,16 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(75.dp),
+                .background(Color.White)
+                .height(60.dp),
             verticalArrangement = Arrangement.Bottom
         ) {
             Divider(
                 color = Color(0xFFD9D9D9),
-                thickness = 2.dp,
+                thickness = 3.dp,
                 modifier = Modifier.fillMaxWidth()
             )
-
-            Row {
+            Row (){
                 Box(
                     modifier = Modifier
                         .fillMaxHeight()
@@ -207,7 +208,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController) {
                         modifier = Modifier
                             .size(35.dp)
                             .clickable {
-                                controleDeNavegacao.navigate("grupoMentoria")
+                                controleDeNavegacao.navigate("TelaSuporte")
                             },
                         painter = painterResource(id = R.drawable.duvida),
                         contentDescription = "Ajuda"
@@ -250,6 +251,7 @@ fun BarradeNavegacao(controleDeNavegacao: NavHostController) {
                 }
             }
         }
+        Spacer(modifier = Modifier.height(7.dp))
     }
 }
 
