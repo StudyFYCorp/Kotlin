@@ -82,7 +82,7 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "Assunto 1 - Soma e subtração",
+                text = "Assunto 1 - Capitais",
                 fontSize = 20.sp,
             )
         }
@@ -98,7 +98,7 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
                 horizontalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Soma simples",
+                    text = "Capitais",
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp,
                 )}
@@ -177,7 +177,7 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "Assunto 2 - Soma e subtração",
+                text = "Assunto 2 - Bandeiras dos estados",
                 fontSize = 20.sp,
             )
         }
