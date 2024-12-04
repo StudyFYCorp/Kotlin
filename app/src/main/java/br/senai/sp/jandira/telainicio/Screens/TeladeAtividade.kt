@@ -69,7 +69,7 @@ fun TeladeAtividade(controleDeNavegacao: NavHostController){
 
             {
                 Text(
-                    text = "Matemática - Fund1",
+                    text = "Geografia - Fund1",
                     fontSize = 20.sp,
                 )
             }
